@@ -1,0 +1,18 @@
+<ion-menu side="start" menuId="menup" contentId="menuprincipal">
+  <ion-header>
+    <ion-toolbar color="tertiary" (click)="navegar('/inicio')">
+      <ion-title>ORDOÑEZ</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle *ngFor="let item of menuprincial|async">
+        <ion-item   (click)="navegar(item.url)" detail >
+          <ion-icon color="success" slot="start" [name]="item.icono"> </ion-icon> 
+          <ion-label color="tertiary"class="mayus" >{{item.texto}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+     
+    </ion-list>
+  </ion-content>
+</ion-menu>
